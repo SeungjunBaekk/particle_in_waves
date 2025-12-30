@@ -13,7 +13,7 @@ Particle and wave information used in the experiments are stored in `particle_st
 - Column 5 (`Re`): particle Reynolds number based on the terminal settling velocity, \(Re_{p,t}\)
 - Column 6 (`rho_p`): particle density [g/cm³]
 
-#### 1-2. `wavInfo.CSV`
+#### 1-2. `waveInfo.CSV`
 Wave information is provided for each wave condition:
 - `H`: wave height [m]
 - `T`: wave period [s]
