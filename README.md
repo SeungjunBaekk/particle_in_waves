@@ -33,7 +33,7 @@ In each wave–particle case folder, slip-velocity measurement results for each 
 - `x_fit`, `y_fit`: spline-fitting results [m]
 - `u_p`, `v_p`: particle velocities in the x and z directions [m/s]
 - `u_f`, `v_f`: fluid velocities at the particle location in the x and z directions [m/s]
-- `u_slip`, `v_slip`: slip (relative) velocities in the x and z directions \((u_p-u_f,\ v_p-v_f)\) [m/s]
+- `u_slip`, `v_slip`: slip (relative) velocities in the x and z directions \((u_p-u_f, v_p-v_f)\) [m/s]
 - `u_phi_f`, `v_phi_f`: wave phase estimated from the fluid velocity in the x and z directions
 - `u_phi_p`, `v_phi_p`: particle-motion phase estimated from the particle velocity in the x and z directions
 
