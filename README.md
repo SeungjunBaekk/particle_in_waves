@@ -25,7 +25,7 @@ Wave information is provided for each wave condition:
 
 ---
 
-### 2. Trial-wise slip velocity results (`slip_vs_results_*.mat`)
+### 2. Trial-wise slip velocity results (`slip_vh_results_*.mat`)
 In each wave–particle case folder, slip-velocity measurement results for each trial are saved as `slip_vs_results_*.mat`. Variables:
 - `meta`: logs from the original PTV files and the quiescent-water settling velocity
 - `time`: time indexing consistent with PIV
@@ -36,10 +36,10 @@ In each wave–particle case folder, slip-velocity measurement results for each 
 - `u_slip`, `v_slip`: slip (relative) velocities in the x and z directions \((u_p-u_f, v_p-v_f)\) [m/s]
 - `u_phi_f`, `v_phi_f`: wave phase estimated from the fluid velocity in the x and z directions
 - `u_phi_p`, `v_phi_p`: particle-motion phase estimated from the particle velocity in the x and z directions
-
+- `orb_phi_f`: orbital phase reconstructed from the fluid velocity signal (used as the reference phase for phase-resolved analysis)
 ---
 
-### 3. Ensemble-averaged results (`*_vs_avg_unit.mat`)
+### 3. Ensemble-averaged results (`*_vh_avg_unit.mat`)
 In each case folder, ensemble-averaged results are stored in `*_vs_avg_unit.mat`:
 - `E_cosh_tracks`, `E_sinh_tracks`: depth factors as a function of \(z_{\mathrm{eff}}\) for each trial
 - `E_cosh_ens_out`, `E_sinh_ens_out`: ensemble averages of the depth factors
@@ -53,12 +53,15 @@ In each case folder, ensemble-averaged results are stored in `*_vs_avg_unit.mat`
 - `r_avg_v`, `r_se_v`: phase-averaged vertical slip velocity [m/s] and its standard deviation from ensemble averaging [m/s]
 - `thetas_std`: standardized wave phase \(\phi\)
 - `v_s`: measured terminal settling velocity in quiescent water [m/s]
+- `v_w_avg_tracks`: wave-averaged vertical slip velocity computed for each individual track prior to binning [m/s]
+- `vp_w_avg_tracks`: wave-averaged particle vertical velocity (absolute velocity) for each individual track [m/s]
+- `z_w_avg_tracks`: wave-averaged particle position (depth) for each individual track [m]
 
 ---
 
 ### 4. `PiW_figures.m`
-Figure-drawing code for Figures 4, 5, 6, 8, and 9.
+Figure-drawing code for Figures 4, 5, 6, 7, 9, 10, 14.
 
 ### 5. `PiW_phase_comp.m`
-Code for comparing theory and measurements (Figures 10 and 11).
+Code for comparing theory and measurements (Figures 11, 12 and 13).
 ```
