@@ -1303,7 +1303,7 @@ lw_ref      = 1.6;    % reference (5*omega*tau_p) line width
 
 % === Create figure ===
 figR = figure('Name','R_D & R_{wave} - all particles');
-set(figR,'Position',[50 50 1200 900]);
+set(figR,'Position',[-1000 50 1100 1200]);
 set(figR,'Color','w');
 set(figR,'Renderer','opengl');   % changed from 'painters' to enable transparency
 
@@ -1381,7 +1381,7 @@ for pI = 1:nPart
 
         grid(ax_RD,'on')
         if pI == nPart
-            xlabel(ax_RD,'$\omega t$','Interpreter','latex')
+            xlabel(ax_RD,'$t$','Interpreter','latex')
         end
         if wI == nWave
             ylabel(ax_RD, sprintf('%s\n$\\mathcal{R}_{\\mathrm{drag}}$', partinfo), 'Interpreter','latex')
@@ -1788,11 +1788,11 @@ for pI = 1:pN
 
         % Load trials
         filepath = [wave, partinfo];
-        flist    = dir(fullfile(filepath, 'slip_vs_results_*.mat'));
+        flist    = dir(fullfile(filepath, 'slip_vh_results_*.mat'));
         case_tot = numel(flist);
 
         if case_tot == 0
-            warning('No slip_vs_results_*.mat in %s. Skip.', filepath);
+            warning('No slip_vh_results_*.mat in %s. Skip.', filepath);
             continue;
         end
 
@@ -1952,7 +1952,6 @@ for pI = 1:pN
         % Dimensionless frequency
         fhat = f * d_p / v_g;
 
-        % patch는 x, y 좌표 크기가 정확히 같아야 하므로 row vector로 통일
         fhat_row = fhat(:)';
 
         % --- Plot: piecewise-linear over native frequency bins ---
@@ -2038,7 +2037,7 @@ end
 
 legend(ax_leg, Hleg, ...
     'Interpreter', 'latex', ...
-    'FontSize', 13, ...
+    'FontSize', 18, ...
     'Location', 'northwest');
 
 % --- Panel labels ---
@@ -2063,7 +2062,7 @@ end
 fig_spec.Position = [50 50 1200 1200];
 
 % exportgraphics(fig_spec, ...
-%     'E:\2.ParticlesInWave\Manuscript\figures\slip_fluctuation_spectra_BP_style.pdf', ...
+%     'E:\2.ParticlesInWave\Manuscript\figures\slip_fluctuation_spectra.pdf', ...
 %     'ContentType', 'vector', ...
 %     'BackgroundColor', 'none');
 
